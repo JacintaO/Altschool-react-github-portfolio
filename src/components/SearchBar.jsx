@@ -14,7 +14,7 @@ const SearchBar = ({ searchRepos }) => {
       placeholder="Search repositories..."
       value={searchTerm}
       onChange={handleChange}
-      className="border border-gray-300 rounded px-3 py-1 bg-white text-black text-base focus:outline-none focus:border-turquoise-500"
+      className="border border-yellow-500 rounded py-2 px-10 my-14 bg-black text-white text-base focus:outline-none focus:border-turquoise-500"
     />
   );
 };

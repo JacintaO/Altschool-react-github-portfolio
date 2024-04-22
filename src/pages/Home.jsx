@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
-import ErrorBoundary from '../components/ErrorBoundary';
 import { fetchUserRepos } from '../utils/api';
 import RepoCard from '../components/RepoCard';
 import Pagination from '../components/Pagination';
@@ -12,11 +10,12 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [reposPerPage] = useState(3);
   const [searchTerm, setSearchTerm] = useState('');
+  const githubUsername = import.meta.env.VITE_GITHUB_USER;
 
   useEffect(() => {
     const fetchRepositories = async () => {
       try {
-        const data = await fetchUserRepos('JacintaO');
+        const data = await fetchUserRepos(`${githubUsername}`);
         setRepositories(data);
       } catch (error) {
         console.error('Error fetching repositories:', error);
@@ -24,7 +23,7 @@ const Home = () => {
     };
 
     fetchRepositories();
-  }, []);
+  }, [`${githubUsername}`]);
 
   // Get current repositories
   const indexOfLastRepo = currentPage * reposPerPage;
@@ -44,7 +43,13 @@ const Home = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold my-4">User Repositories</h1>
+      <div className="flex items-center justify-center">
+        <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
+          <img src="path/to/github-logo.jpg" alt="GitHub Logo" className="w-8 h-8 mr-2" />
+        </a>
+        <h1 className="text-2xl font-bold my-4">User Repositories - {githubUsername}</h1>
+      </div>
+
       <SearchBar searchRepos={searchRepos} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {currentRepos.map((repo) => (

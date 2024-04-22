@@ -1,6 +1,6 @@
 ## React + Vite - A Web App using GitHub API to fetch repositories
 
-[View Live](#)
+[View Live](https://jacinta-altschool-exam.vercel.app/)
 
 This is a React application that fetches a user's GitHub repositories, displays them with pagination and search functionality, and allows navigation to a detailed view of each individual repository.
 

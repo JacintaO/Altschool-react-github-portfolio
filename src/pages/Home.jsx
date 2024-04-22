@@ -45,7 +45,7 @@ const Home = () => {
     <div className="container mx-auto px-4">
       <div className="flex items-center justify-center">
         <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
-          <img src="path/to/github-logo.jpg" alt="GitHub Logo" className="w-8 h-8 mr-2" />
+          <img src="./assets/github-logo.jpg" alt="GitHub Logo" className="w-8 h-8 mr-2" />
         </a>
         <h1 className="text-2xl font-bold my-4">User Repositories - {githubUsername}</h1>
       </div>

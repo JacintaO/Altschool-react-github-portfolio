@@ -48,7 +48,7 @@ npm run dev  # If using npm
 This will start the development server, typically accessible at `http://localhost:5173/` in your browser.
 
 **Usage:**
-The application fetches repositories for a user named (Mine by default). You can modify the fetching logic to accept a username as a parameter if desired.
+The application fetches repositories for a user (dynamically set). You can modify the fetching logic to accept a username as a parameter if desired.
 
 -   The home page displays the list of repositories with pagination and search functionality.
 -   Clicking on a repository name navigates you to a page displaying details of that specific repository.
